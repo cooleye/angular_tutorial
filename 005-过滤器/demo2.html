@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../angular-lib/angular.min.js"></script>
+  </head>
+  <body ng-controller="ctrl">
+    <h1>
+      {{text | hexie2:'are'}}
+    </h1>
+<script>
+    angular.module('app',[])
+    .controller('ctrl',function($scope){
+        $scope.text = 'You are stupid';
+    })
+    .filter('hexie',function(){
+      return function(ele){
+          var wordArr = ele.split(' ');
+          wordArr = wordArr.map(function(word){
+              word =  word == 'stupid' ? "*" :word;
+              return word;
+          })
+          return wordArr.join(' ')
+      }
+    })
+    .filter('hexie2',function(){
+      return function(ele,arg){
+          var wordArr = ele.split(' ');
+          wordArr = wordArr.map(function(word){
+              word =  word == arg ? "*" :word;
+              return word;
+          })
+          return wordArr.join(' ')
+      }
+    })
+
+</script>
+  </body>
+</html>

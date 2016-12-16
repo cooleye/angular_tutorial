@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../angular-lib/angular.min.js"></script>
+  </head>
+  <body ng-controller="ctrl">
+    <div my-header name="范冰冰" click="click(100)" age="age"></div>
+<script>
+angular.module('app',[])
+.controller('ctrl',function($scope){
+    $scope.age = 18;
+})
+.directive('myHeader',function(){
+    return{
+      transclude:true,
+      template:"<div>自定义指令</div>",
+      link:function($scope,$ele,$attrs){
+          console.log($scope.age)
+          console.log($attrs.name)
+          $ele.on('click',function(){
+              this.style.backgroundColor = 'red'
+          })
+      }
+    }
+})
+
+</script>
+  </body>
+</html>

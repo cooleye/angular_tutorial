@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../angular-lib/angular.min.js"></script>
+  </head>
+  <body ng-controller="ctrl">
+    <div my-header>
+        <hi></hi>
+    </div>
+<script>
+angular.module('app',[])
+.controller('ctrl',function(){})
+.directive('myHeader',function(){
+    return{
+      transclude:true,
+      template:"<div><div ng-transclude></div></div>"
+    }
+})
+.directive('hi',function(){
+  return{
+    template:"<h2> 这是 Hi 指令</h2>"
+  }
+})
+</script>
+  </body>
+</html>

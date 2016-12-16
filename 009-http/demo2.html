@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../angular-lib/angular.min.js"></script>
+  </head>
+  <body ng-controller="ctrl">
+
+      <ul ng-repeat="x in datas">
+          <li>
+              <span ng-bind="x.name"></span> <span ng-bind="x.price"></span>
+          </li>
+      </ul>
+
+<script>
+    angular.module('app',[])
+    .controller('ctrl',function($scope,dateService){
+        dateService.getdate()
+        .success(function(res){
+          $scope.datas = res.data;
+        })
+    })
+    .service('dateService',function($http){
+        this.getdate = function(){
+            return $http.get('http://h5.yztctech.net/api/axf/apihomehot.php')
+        }
+    })
+
+</script>
+  </body>
+</html>

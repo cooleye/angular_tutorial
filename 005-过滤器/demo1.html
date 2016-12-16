@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../angular-lib/angular.min.js"></script>
+  </head>
+  <body ng-controller="ctrl">
+
+    <h1>
+      {{price}}
+    </h1>
+    <h1>
+      {{price | currency}}
+    </h1>
+
+    <h1>
+      {{price | currency:'￥'}}
+    </h1>
+
+<script>
+
+    angular.module('app',[])
+    .controller('ctrl',function($scope){
+        $scope.price = 998;
+    })
+
+</script>
+  </body>
+</html>

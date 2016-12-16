@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../angular-lib/angular.min.js"></script>
+  </head>
+  <body ng-init="text='hello'" ng-controller="ctrl">
+
+      <h1>{{text}}</h1>
+
+      <input ng-model="text"/>
+
+
+<script>
+
+    angular.module('app',[])
+    // .controller('ctrl',function($scope){
+    //     $scope.$watch('text',function(value){
+    //         console.log(value)
+    //     })
+    // })
+
+
+    .controller('ctrl',function($scope){
+        $scope.$watch('text',function(newvalue,oldvalue,scope){
+            console.log(newvalue)
+            console.log(newvalue)
+        })
+    })
+
+</script>
+  </body>
+</html>

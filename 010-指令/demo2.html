@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../angular-lib/angular.min.js"></script>
+    <style>
+      .red{width: 100px;height: 100px;background-color: red}
+      .green{width: 100px;height: 100px;background-color: green}
+    </style>
+  </head>
+  <body ng-controller="ctrl">
+      <div ng-if="name">{{name}}</div>
+<script>
+    angular.module('app',[])
+    .controller('ctrl',function($scope){
+        $scope.name = "hello"
+    })
+</script>
+  </body>
+</html>

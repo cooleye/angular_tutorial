@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../angular-lib/angular.min.js"></script>
+  </head>
+  <body ng-controller="ctrl">
+      <ul ng-repeat="m in movies">
+        <li> 名称：{{m.movie}},票价：{{m.price}}</li>
+      </ul>
+<script>
+    angular.module('app',[])
+    .controller('ctrl',function($scope){
+        $scope.movies = [
+          {id:0,movie:'神奇动物',price:100},
+          {id:1,movie:'长城',price:88},
+          {id:2,movie:'七月与安生',price:60},
+          {id:3,movie:'名侦探柯南',price:90},
+          {id:4,movie:'我不是潘金莲',price:80},
+          {id:5,movie:'冲天火',price:80},
+          {id:6,movie:'美国队长',price:120},
+          {id:7,movie:'魔兽世界',price:120},
+          {id:8,movie:'钢铁侠',price:110},
+          {id:9,movie:'变形金刚',price:140},
+        ]
+    })
+</script>
+  </body>
+</html>

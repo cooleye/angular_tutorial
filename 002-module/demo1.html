@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+
+  <body ng-controller="ctrl">
+
+      <h1>
+        {{name}}
+      </h1>
+
+      <h1 ng-bind="name"></h1>
+
+    <script>
+
+        angular.module('app',[])
+        .controller('ctrl',function($scope){
+            $scope.name = "hello angular";
+        })
+
+    </script>
+<script src="../angular-lib/angular.min.js"></script>
+  </body>
+
+
+</html>

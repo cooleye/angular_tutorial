@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../angular-lib/angular.min.js"></script>
+  </head>
+  <body ng-controller="ctrl">
+
+    <h1>
+      {{name}}
+    </h1>
+<script>
+  angular.module('app',[])
+  .controller('ctrl',function($scope){
+      $scope.name = '小明';
+      setTimeout(function(){
+          // $scope.name = '小红';
+          $scope.$apply(function(){
+             $scope.name = '小红';
+          })
+      },2000)
+  })
+
+  .controller('ctrl',function($scope,$timeout){
+      $scope.name = '小明';
+      $timeout(function(){
+          $scope.name = '小红';
+      },2000)
+  })
+
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../angular-lib/angular.min.js"></script>
+  </head>
+  <body ng-controller="ctrl">
+
+      <h1>
+        {{location}}
+      </h1>
+      <h1>
+        {{pi}}
+      </h1>
+
+<script>
+    angular.module('app',[])
+    .config(function(PI){
+        console.log(PI)
+    })
+    .value('dataService',{name:'北京',say:function(){return 'hello'}})
+    .constant('PI',3.14)
+    .controller('ctrl',function($scope,dataService,PI){
+          $scope.location = dataService.name;
+          $scope.pi = PI;
+          console.log(dataService.say())
+    })
+</script>
+  </body>
+</html>
